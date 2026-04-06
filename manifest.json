@@ -1,0 +1,108 @@
+{
+  "dxt_version": "0.3",
+  "name": "limadata-mcp",
+  "display_name": "Limadata B2B Intelligence",
+  "version": "1.0.0",
+  "description": "B2B data enrichment and intelligence — enrich people/companies, find emails & phones, prospect leads, search LinkedIn, and more via the Limadata API.",
+  "long_description": "Access the full Limadata B2B data platform from Claude Desktop. Includes 40+ tools for:\n\n- **Enrichment** — Enrich person and company profiles with firmographic, technographic, and contact data\n- **Contact Discovery** — Find work/personal emails, phone numbers, and social profiles\n- **Search** — Search people, companies, jobs, and LinkedIn posts\n- **Prospecting** — Advanced filtered prospecting for people and companies\n- **Research** — AI-powered search and web page extraction\n- **Batch Operations** — Bulk data retrieval for large lists\n- **Watch/Webhooks** — Monitor people and companies for changes\n- **Workplace Intel** — Glassdoor ratings and benefits data\n\nRequires a Limadata API key. Get one at https://app.limadata.com/settings/apikeys",
+  "author": {
+    "name": "Limadata",
+    "url": "https://limadata.com"
+  },
+  "homepage": "https://limadata.com",
+  "documentation": "https://docs.limadata.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthropics/dxt"
+  },
+  "license": "MIT",
+  "keywords": [
+    "b2b",
+    "enrichment",
+    "leads",
+    "prospecting",
+    "linkedin",
+    "email-finder",
+    "sales-intelligence",
+    "limadata",
+    "mcp"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "LIMADATA_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "tools": [
+    { "name": "enrich_person", "description": "Enrich a person's professional profile using email, LinkedIn URL, or name+company" },
+    { "name": "enrich_company", "description": "Enrich a company profile using domain or LinkedIn URL" },
+    { "name": "get_person", "description": "Get person data from LinkedIn profile URL" },
+    { "name": "get_company", "description": "Get company data from LinkedIn company URL" },
+    { "name": "get_company_insights", "description": "Get company insights from Crunchbase (funding, acquisitions)" },
+    { "name": "find_work_email", "description": "Find a person's work email using name and company domain" },
+    { "name": "find_work_email_linkedin", "description": "Find a person's work email from their LinkedIn URL" },
+    { "name": "find_personal_email", "description": "Find a person's personal email from social profiles" },
+    { "name": "find_phone", "description": "Find a person's phone number" },
+    { "name": "find_company_linkedin", "description": "Find a company's LinkedIn page from their domain" },
+    { "name": "find_identity_resolution", "description": "Resolve a person's social profiles from name and company" },
+    { "name": "find_reverse_email", "description": "Reverse lookup a person from their email address" },
+    { "name": "find_hashed_emails", "description": "Get hashed email identifiers for ad platform audience matching" },
+    { "name": "find_glassdoor_company", "description": "Find a company's Glassdoor ID from their domain" },
+    { "name": "search_people", "description": "Search for people on LinkedIn by keywords, title, company, location" },
+    { "name": "search_companies", "description": "Search for companies on LinkedIn by keywords, size, location" },
+    { "name": "search_jobs", "description": "Search for job postings with advanced filters" },
+    { "name": "search_posts", "description": "Search LinkedIn posts by keywords and filters" },
+    { "name": "search_web", "description": "Semantic web search with cited results" },
+    { "name": "ai_search", "description": "AI-powered search returning sourced answers or structured data" },
+    { "name": "extract", "description": "Extract structured content from web pages" },
+    { "name": "prospect_people_filter", "description": "Find people using advanced filters" },
+    { "name": "prospect_companies_filter", "description": "Find companies using advanced filters" },
+    { "name": "prospect_employees", "description": "Find employees at a specific company" },
+    { "name": "prospect_people_by_url", "description": "Prospect people using a Sales Navigator search URL" },
+    { "name": "prospect_companies_by_url", "description": "Prospect companies using a Sales Navigator search URL" },
+    { "name": "get_company_jobs", "description": "Get job postings for a company" },
+    { "name": "get_job_details", "description": "Get full details of a specific job posting" },
+    { "name": "get_posts", "description": "Get LinkedIn posts for a person or company" },
+    { "name": "get_post_details", "description": "Get full details of a specific LinkedIn post" },
+    { "name": "get_post_comments", "description": "Get comments on a LinkedIn post" },
+    { "name": "get_post_reactions", "description": "Get reactions on a LinkedIn post" },
+    { "name": "create_watch", "description": "Create a watch subscription to monitor changes" },
+    { "name": "list_watches", "description": "List all watch subscriptions" },
+    { "name": "get_watch", "description": "Get a specific watch subscription" },
+    { "name": "update_watch", "description": "Update a watch subscription" },
+    { "name": "mock_watch_payload", "description": "Get a mock webhook payload for testing" },
+    { "name": "get_workplace_benefits", "description": "Get workplace benefits data from Glassdoor" },
+    { "name": "get_workplace_ratings", "description": "Get workplace ratings from Glassdoor" },
+    { "name": "batch_people", "description": "Batch retrieve multiple people profiles" },
+    { "name": "batch_companies", "description": "Batch retrieve multiple company profiles" },
+    { "name": "batch_prospect_people", "description": "Batch prospect people matching filters" },
+    { "name": "batch_prospect_companies", "description": "Batch prospect companies matching filters" },
+    { "name": "batch_list", "description": "List all batch operations" },
+    { "name": "batch_results", "description": "Get results of a batch operation" },
+    { "name": "autocomplete", "description": "Get autocomplete suggestions for filter values" },
+    { "name": "credits_balance", "description": "Check current Limadata credits balance" }
+  ],
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Limadata API Key",
+      "description": "Your Limadata API key. Get one at https://app.limadata.com/settings/apikeys",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

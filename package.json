@@ -1,0 +1,9 @@
+{
+  "name": "limadata-mcp",
+  "version": "1.0.0",
+  "description": "Limadata B2B data enrichment and intelligence MCP server",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  }
+}
