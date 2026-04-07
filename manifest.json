@@ -6,11 +6,11 @@
   "description": "B2B data enrichment and intelligence — enrich people/companies, find emails & phones, prospect leads, search LinkedIn, and more via the Limadata API.",
   "long_description": "Access the full Limadata B2B data platform from Claude Desktop. Includes 40+ tools for:\n\n- **Enrichment** — Enrich person and company profiles with firmographic, technographic, and contact data\n- **Contact Discovery** — Find work/personal emails, phone numbers, and social profiles\n- **Search** — Search people, companies, jobs, and LinkedIn posts\n- **Prospecting** — Advanced filtered prospecting for people and companies\n- **Research** — AI-powered search and web page extraction\n- **Batch Operations** — Bulk data retrieval for large lists\n- **Watch/Webhooks** — Monitor people and companies for changes\n- **Workplace Intel** — Glassdoor ratings and benefits data\n\nRequires a Limadata API key. Get one at https://app.limadata.com/settings/apikeys",
   "author": {
-    "name": "Limadata",
-    "url": "https://limadata.com"
+    "name": "7EDGE",
+    "url": "https://7EDGE.com"
   },
-  "homepage": "https://limadata.com",
-  "documentation": "https://docs.limadata.com",
+  "homepage": "https://7EDGE.com",
+  "documentation": "https://api.limadata.com/docs/",
   "repository": {
     "type": "git",
     "url": "https://github.com/anthropics/dxt"
